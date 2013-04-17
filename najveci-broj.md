@@ -1,0 +1,1 @@
+Najveci broj koraka (704) je bio za broj 15733191
