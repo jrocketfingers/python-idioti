@@ -1,4 +1,4 @@
-broj = 1
+broj = 200480903
 
 max_koraka = 0
 max_broj = 1
@@ -32,3 +32,4 @@ except KeyboardInterrupt:
         print 'Obracun ovog broja jos nije gotov! Potencijalni najduzi/neresivi!'
 
     print 'Najveci broj koraka (%d) je bio za broj %d' % (max_koraka, max_broj)
+    print 'A poslednji broj je', broj
