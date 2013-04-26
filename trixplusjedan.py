@@ -1,6 +1,7 @@
 import os, fileinput
 
-broj = 200480903
+broj = 200593565
+
 pocetni_broj = broj
 
 max_koraka = 0
@@ -41,5 +42,5 @@ except KeyboardInterrupt:
 
     for line in trix:
         if line.startswith('broj ='):
-            line.replace(str(pocetni_broj), str(broj))
-        print line
+            line = line.replace(str(pocetni_broj), str(broj))
+        print line,
