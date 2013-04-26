@@ -1,4 +1,7 @@
+import os, fileinput
+
 broj = 200480903
+pocetni_broj = broj
 
 max_koraka = 0
 max_broj = 1
@@ -33,3 +36,10 @@ except KeyboardInterrupt:
 
     print 'Najveci broj koraka (%d) je bio za broj %d' % (max_koraka, max_broj)
     print 'A poslednji broj je', broj
+
+    trix = fileinput.input(os.path.realpath(__file__), inplace=1)
+
+    for line in trix:
+        if line.startswith('broj ='):
+            line.replace(str(pocetni_broj), str(broj))
+        print line
