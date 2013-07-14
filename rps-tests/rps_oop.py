@@ -6,6 +6,7 @@ class InvalidRollOptionError(Exception):
 class InvalidPlayerNameError(Exception):
     pass
 
+
 class Rock:
     name = "rock"
 
@@ -31,13 +32,13 @@ class RollHandler:
     options = [Rock, Paper, Scissors]
 
     @staticmethod
-    def Weigh(option1, option2):
-        if option1.stronger_than == option2:
-            return "Player 1 wins."
-        elif option1 == option2:
+    def Weigh(player1, player2):
+        if player1.choice.stronger_than == player2.choice:
+            return player1.name + " wins."
+        elif player1.choice == player2.choice:
             return "It's a draw!"
         else:
-            return "Player 2 wins."
+            return  player2.name + " wins."
 
 
 class AI:

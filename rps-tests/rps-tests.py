@@ -83,14 +83,23 @@ class RPSPlayerNameCase(unittest.TestCase):
 
 class RPSWeightCase(unittest.TestCase):
     def setUp(self):
-        pass
+        self.player = Player()
+        self.ai = AI('Computer')
 
     def test2Players(self):
         """Test the weight victory condition."""
 
-        self.assertEqual(RollHandler.Weigh(Rock, Scissors), "Player 1 wins.")
-        self.assertEqual(RollHandler.Weigh(Rock, Paper), "Player 2 wins.")
-        self.assertEqual(RollHandler.Weigh(Rock, Rock), "It's a draw!")
+        self.player.choice = Rock
+        self.ai.choice = Scissors
+        self.assertEqual(RollHandler.Weigh(self.player, self.ai), self.player.name + " wins.")
+
+        self.player.choice = Rock
+        self.ai.choice = Paper
+        self.assertEqual(RollHandler.Weigh(self.player, self.ai), self.ai.name + " wins.")
+
+        self.player.choice = Rock
+        self.ai.choice = Rock
+        self.assertEqual(RollHandler.Weigh(self.player, self.ai), "It's a draw!")
 
     def test3Players(self):
         pass
