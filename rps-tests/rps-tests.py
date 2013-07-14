@@ -72,12 +72,15 @@ class RPSPlayerNameCase(unittest.TestCase):
         self.AI = AI('AIname')
 
     def testAIName(self):
+        """Test if AI names are assigned properly."""
         self.assertEquals(self.AI.name, 'AIname')
 
     def testAIInsufficientArguments(self):
+        """Test if an exception is risen when AI constructor is not given enough arguments."""
         self.assertRaises(TypeError, AI)
 
     def testAINoneName(self):
+        """Test if an exception is risen when AI constructor is given no name."""
         self.assertRaises(InvalidPlayerNameError, AI, None)
 
 

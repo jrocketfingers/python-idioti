@@ -7,8 +7,8 @@ if __name__ == "__main__":
     question = 'yes'
 
     while question != 'n':
-        player.Input()
-        ai.Roll()
-        print RollHandler.Weigh(player.choice, ai.choice)
+        print player.name + " chooses " + player.Input().name + "."
+        print ai.name + " chooses " + ai.Roll().name + "."
+        print RollHandler.Weigh(player, ai)
 
         question = raw_input("Do you wanna go for another roll? [y]/n: ")

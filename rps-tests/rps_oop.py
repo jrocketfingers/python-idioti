@@ -55,7 +55,6 @@ class AI:
         choice = randint(0,2)
         if choice < len(RollHandler.options) and choice >= 0:
             self.choice = RollHandler.options[choice]
-            print self.name, "chooses", self.choice.name
             return self.choice
         else:
             raise IndexError
@@ -73,7 +72,6 @@ class Player:
         choice = raw_input("Input <rock/paper/scissors>: ").lower()
         if self.options.has_key(choice):
             self.choice = self.options[choice]
-            print "Player chooses", self.choice.name
             return self.choice
         else:
             raise InvalidRollOptionError
