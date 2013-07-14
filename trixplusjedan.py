@@ -1,7 +1,16 @@
+#==============================================================================#
+# 3x+1 problem: svaki broj za koji se primeni x%2==0 => x/2 v x%2!=0 => 3x+1   #
+# se u jednom trenutku svoje sekvence svodi na 1.                              #
+#==============================================================================#
+
 import os, fileinput
 
-broj = 200593565
-
+# Pocetni broj je hardkodovan (upisan u samom kodu)
+# Moramo ga zabeleziti da bismo kasnije mogli nastaviti od zadnjeg broja na kom
+# smo stali, jer je problem potencijalno neresiv.
+broj = 221269363
+# Neophodno je zadrzati prvi upotrebljeni broj da bismo ga posle mogli naci
+# u kodu, i izvrsili zamenu sa novim zadnjim brojem (posto nastavljamo svaki put)
 pocetni_broj = broj
 
 max_koraka = 0

@@ -3,30 +3,26 @@
 # 3 - ako nema samoglasnika, dodaj 'ay'
 vokali = ['a', 'e', 'i', 'o', 'u']
 
-pitanje = 'da'
+play_again = 'da'
 
-while pitanje == 'da':
+while play_again == 'da' or play_again == 'yes' or play_again == 'y':
 
     recenica = raw_input('Unesite recenicu: ')
 
-    for reci in recenica.split():
+    for rec in recenica.split():
 
-        if reci[0] in vokali:
-            reci += 'ay'
+        if rec[0] in vokali:
+            rec += 'ay'
         else:
-            ima_samoglasnik = False
-
-            for slovo in reci:
+            for slovo in rec:
                 if slovo in vokali:
-                    seci_do = reci.index(slovo)
-                    reci = reci[seci_do:] + reci[0:seci_do] + 'ay'
-                    ima_samoglasnik = True
+                    seci_do = rec.index(slovo)
+                    rec = rec[seci_do:] + rec[0:seci_do] + 'ay'
                     break
+            else:
+                rec += 'ay'
 
-            if ima_samoglasnik == False:
-                reci += 'ay'
-
-        print reci,
+        print rec,
 
     print
-    pitanje = raw_input('Da li zelite da unesete novu recenicu: ')
+    play_again = raw_input('Da li zelite da unesete novu recenicu: ')

@@ -3,21 +3,6 @@ from random import randint
 again = 'Y'
 
 choices = [ \
-        { \
-            'type': 'rock', \
-            'weaker': 2, \
-            'stronger': 1 \
-        }, \
-        { \
-            'type': 'paper', \
-            'weaker': 0, \
-            'stronger': 2 \
-        }, \
-        { \
-            'type': 'scissors', \
-            'weaker': 1, \
-            'stronger': 0 \
-        }]
 
 mapping = {'rock': 0, 'paper': 1, 'scissors': 2}
 
@@ -33,7 +18,7 @@ while again != 'n':
             print 'It\'s a draw! (%s,%s)' % (choices[computer_choice]['type'], choices[mapping[chosen]]['type'])
         elif mapping[chosen] == choices[computer_choice]['weaker']:
             print '%s beats %s! Computer wins!' % (choices[computer_choice]['type'], choices[mapping[chosen]]['type'])
-        elif  mapping[chosen] == choices[computer_choice]['stronger']:
+        elif mapping[chosen] == choices[computer_choice]['stronger']:
             print '%s beats %s! Player wins!' % (choices[mapping[chosen]]['type'], choices[computer_choice]['type'])
         else:
             print 'ERROR', mapping[chosen], computer_choice
